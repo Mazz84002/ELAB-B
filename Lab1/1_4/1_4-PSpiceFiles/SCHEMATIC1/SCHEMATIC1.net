@@ -1,0 +1,15 @@
+* source 1_4
+V_V1         0 HIGH 5Vdc
+X_U1         HIGH CLK 0 N15349 HIGH HIGH HIGH 0 M_UN0001 M_UN0002 N15357
++  M_UN0003 N15349 M_UN0004 $G_DPWR $G_DGND 74193 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+U_DSTM1         STIM(1,1)
++ $G_DPWR $G_DGND
++ CLK 
++ IO_STM
++ IO_LEVEL=0
++  0s 0  
++ 0.5us 1  
++ 0.5us 0  
++ 0.5us 1 
++ 0.5us 0  

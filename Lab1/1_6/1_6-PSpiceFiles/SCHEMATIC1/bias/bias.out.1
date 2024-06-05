@@ -1,0 +1,142 @@
+
+**** 06/06/24 00:30:57 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-bias"  [ C:\ELAB-B\Lab1\1_6\1_6-PSpiceFiles\SCHEMATIC1\bias.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "bias.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\Users\mazz\cdssetup\OrCAD_PSpice\17.2.0\PSpice.ini file:
+.lib "nomd.lib" 
+
+*Analysis directives: 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source 1_6
+.EXTERNAL OUTPUT output
+X_U2         HIGH CLK 0 N17067 HIGH 0 0 HIGH M_UN0001 M_UN0002 M_UN0003 N17087
++  N17067 M_UN0004 $G_DPWR $G_DGND 74193 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+C_C1         0 N17079  1n  TC=0,0 
+V_V2         0 HIGH 5Vdc
+X_U4         N17087 N17091  $G_DPWR $G_DGND INV
+R_R1         N17075 N16925  1k TC=0,0 
+X_U3         0 N17079 OUTPUT N17091 N17373 N17079 N17075 N16925 555B
+U_DSTM2         STIM(1,1)
++ $G_DPWR $G_DGND
++ CLK 
++ IO_STM
++ IO_LEVEL=0
++  0s 0  
++ 0.5us 1  
++ 0.5us 0  
++ 0.5us 1 
++ 0.5us 0  
+V_Vs         N16925 0 0Vdc
+R_R2         N17079 N17075  1k TC=0,0 
+R_R3         0 N17373  1e100 TC=0,0 
+
+**** RESUMING bias.cir ****
+.END
+
+
+**** Generated AtoD and DtoA Interfaces ****
+
+*
+* Analog/Digital interface for node 0
+*
+* Moving X_U2.U193LOG:IN7 from analog node 0 to new digital node 0$AtoD
+X$0_AtoD1
++ 0
++ 0$AtoD
++ $G_DPWR
++ $G_DGND
++ AtoD_STD
++       PARAMS: CAPACITANCE=   0     
+* Moving X_U2.U193LOG:IN6 from analog node 0 to new digital node 0$AtoD2
+X$0_AtoD2
++ 0
++ 0$AtoD2
++ $G_DPWR
++ $G_DGND
++ AtoD_STD
++       PARAMS: CAPACITANCE=   0     
+* Moving X_U2.U193LOG:IN3 from analog node 0 to new digital node 0$AtoD3
+X$0_AtoD3
++ 0
++ 0$AtoD3
++ $G_DPWR
++ $G_DGND
++ AtoD_STD
++       PARAMS: CAPACITANCE=   0     
+*
+* Analog/Digital interface for node HIGH
+*
+* Moving X_U2.U193LOG:IN8 from analog node HIGH to new digital node HIGH$AtoD
+X$HIGH_AtoD1
++ HIGH
++ HIGH$AtoD
++ $G_DPWR
++ $G_DGND
++ AtoD_STD
++       PARAMS: CAPACITANCE=   0     
+* Moving X_U2.U193LOG:IN5 from analog node HIGH to new digital node HIGH$AtoD2
+X$HIGH_AtoD2
++ HIGH
++ HIGH$AtoD2
++ $G_DPWR
++ $G_DGND
++ AtoD_STD
++       PARAMS: CAPACITANCE=   0     
+* Moving X_U2.U193LOG:IN1 from analog node HIGH to new digital node HIGH$AtoD3
+X$HIGH_AtoD3
++ HIGH
++ HIGH$AtoD3
++ $G_DPWR
++ $G_DGND
++ AtoD_STD
++       PARAMS: CAPACITANCE=   0     
+*
+* Analog/Digital interface for node N17091
+*
+* Moving X_U4.U1:OUT1 from analog node N17091 to new digital node N17091$DtoA
+X$N17091_DtoA1
++ N17091$DtoA
++ N17091
++ $G_DPWR
++ $G_DGND
++ DtoAdefault
++       PARAMS: DRVH=  50     DRVL=  50     CAPACITANCE=   0     
+*
+* Analog/Digital interface power supply subcircuits
+*
+X$DIGIFPWR 0 DIGIFPWR
+
+
+ERROR -- Circuit Too Large!
+EVALUATION VERSION Limit Exceeded for "Q" Devices!
+
+
+
+ERROR -- Circuit Too Large!
+EVALUATION VERSION Limits LOGICEXP devices to 36 I/O connections!
+
+
+

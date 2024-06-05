@@ -1,0 +1,118 @@
+
+**** 06/06/24 00:12:15 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-bias"  [ C:\ELAB-B\Lab1\1_4\1_4-pspicefiles\schematic1\bias.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "bias.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\Users\mazz\cdssetup\OrCAD_PSpice\17.2.0\PSpice.ini file:
+.lib "nomd.lib" 
+
+*Analysis directives: 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source 1_4
+V_V1         0 HIGH 5Vdc
+X_U1         HIGH CLK 0 N15349 HIGH HIGH HIGH 0 M_UN0001 M_UN0002 N15357
++  M_UN0003 N15349 M_UN0004 $G_DPWR $G_DGND 74193 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+U_DSTM1         STIM(1,1)
++ $G_DPWR $G_DGND
++ CLK 
++ IO_STM
++ IO_LEVEL=0
++  0s 0  
++ 0.5us 1  
++ 0.5us 0  
++ 0.5us 1 
++ 0.5us 0  
+
+**** RESUMING bias.cir ****
+.END
+
+
+**** Generated AtoD and DtoA Interfaces ****
+
+*
+* Analog/Digital interface for node 0
+*
+* Moving X_U1.U193LOG:IN8 from analog node 0 to new digital node 0$AtoD
+X$0_AtoD1
++ 0
++ 0$AtoD
++ $G_DPWR
++ $G_DGND
++ AtoD_STD
++       PARAMS: CAPACITANCE=   0     
+* Moving X_U1.U193LOG:IN3 from analog node 0 to new digital node 0$AtoD2
+X$0_AtoD2
++ 0
++ 0$AtoD2
++ $G_DPWR
++ $G_DGND
++ AtoD_STD
++       PARAMS: CAPACITANCE=   0     
+*
+* Analog/Digital interface for node HIGH
+*
+* Moving X_U1.U193LOG:IN7 from analog node HIGH to new digital node HIGH$AtoD
+X$HIGH_AtoD1
++ HIGH
++ HIGH$AtoD
++ $G_DPWR
++ $G_DGND
++ AtoD_STD
++       PARAMS: CAPACITANCE=   0     
+* Moving X_U1.U193LOG:IN6 from analog node HIGH to new digital node HIGH$AtoD2
+X$HIGH_AtoD2
++ HIGH
++ HIGH$AtoD2
++ $G_DPWR
++ $G_DGND
++ AtoD_STD
++       PARAMS: CAPACITANCE=   0     
+* Moving X_U1.U193LOG:IN5 from analog node HIGH to new digital node HIGH$AtoD3
+X$HIGH_AtoD3
++ HIGH
++ HIGH$AtoD3
++ $G_DPWR
++ $G_DGND
++ AtoD_STD
++       PARAMS: CAPACITANCE=   0     
+* Moving X_U1.U193LOG:IN1 from analog node HIGH to new digital node HIGH$AtoD4
+X$HIGH_AtoD4
++ HIGH
++ HIGH$AtoD4
++ $G_DPWR
++ $G_DGND
++ AtoD_STD
++       PARAMS: CAPACITANCE=   0     
+*
+* Analog/Digital interface power supply subcircuits
+*
+X$DIGIFPWR 0 DIGIFPWR
+
+
+ERROR -- Circuit Too Large!
+EVALUATION VERSION Limits LOGICEXP devices to 36 I/O connections!
+
+
+
