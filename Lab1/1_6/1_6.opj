@@ -79,21 +79,20 @@
   (GlobalState
     (FileView
       (Path "Design Resources")
-      (Path "Design Resources" "C:\ELAB-B\Lab1\1_6\1_6.dsn")
-      (Path "Design Resources" "C:\ELAB-B\Lab1\1_6\1_6.dsn" "SCHEMATIC1")
       (Path "Design Resources" "Library")
-      (Path "Outputs"))
+      (Path "Outputs")
+      (Select "Design Resources"))
     (HierarchyView)
     (Doc
       (Type "COrCapturePMDoc")
       (Frame
-        (Placement "44 2 3 -1 -1 -8 -31 0 200 0 390"))
+        (Placement "44 0 1 -1 -1 -8 -31 0 200 0 390"))
       (Tab 0))
     (Doc
       (Type "COrSchematicDoc")
       (Frame
         (Placement "44 0 1 -1 -1 -8 -31 182 1338 182 611")
-        (Scroll "300 351")
+        (Scroll "356 309")
         (Zoom "200")
         (Occurrence "/"))
       (Path "C:\ELAB-B\LAB1\1_6\1_6.DSN")
