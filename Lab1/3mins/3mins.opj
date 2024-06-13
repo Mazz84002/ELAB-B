@@ -1,4 +1,4 @@
-(ExpressProject "1_4"
+(ExpressProject "3mins"
   (ProjectVersion "19981106")
   (ProjectType "Analog or A/D Mixed Mode")
   (Folder "Design Resources"
@@ -24,7 +24,7 @@
            "C:\Cadence\SPB_17.2\tools\capture\library\pspice\special.olb")
         (Type "Schematic Library")))
     (NoModify)
-    (File "1_4.dsn"
+    (File "3mins.dsn"
       (Type "Schematic Design"))
     (BuildFileAddedOrDeleted "x")
     (CompileFileAddedOrDeleted "x")
@@ -33,37 +33,20 @@
     (ANNOTATE_Action "1")
     (ANNOTATE_Reset_References_to_1 "FALSE")
     (ANNOTATE_No_Page_Number_Change "TRUE")
-    (ANNOTATE_Property_Combine "{Value}{Source Package}")
-    (PSPICE_Regenerate_Netlist_Flag "FALSE"))
-  (Folder "Outputs"
-    (File ".\1_4-pspicefiles\schematic1\schematic1.net"
-      (Type "Report")))
+    (ANNOTATE_Property_Combine "{Value}{Source Package}"))
+  (Folder "Outputs")
   (Folder "PSpice Resources"
     (Folder "Model Libraries")
     (Folder "Stimulus Files")
     (Folder "Include Files")
     (Folder "Simulation Profiles"
+      (ActiveProfile ".\3mins-pspicefiles\schematic1\bias.sim")
       (File.PSpice.{09528990-3187-11D2-BC7B-00A0C90CBF91}
-         ".\1_4-pspicefiles\schematic1\bias.sim"
+         ".\3mins-pspicefiles\schematic1\bias.sim"
         (DisplayName "SCHEMATIC1-bias")
-        (Type "PSpice Profile"))
-      (ActiveProfile ".\1_4-pspicefiles\schematic1\trans.sim")
-      (File.PSpice.{09528990-3187-11D2-BC7B-00A0C90CBF91}
-         ".\1_4-pspicefiles\schematic1\trans.sim"
-        (DisplayName "SCHEMATIC1-trans")
         (Type "PSpice Profile"))))
   (DefaultLibraryBrowseDirectory "library\PSpice")
   (PartMRUSelector
-    (DigClock
-      (FullPartName "DigClock.Normal")
-      (LibraryName
-         "C:\CADENCE\SPB_17.2\TOOLS\CAPTURE\LIBRARY\PSPICE\SOURCE.OLB")
-      (DeviceIndex "0"))
-    (VDC
-      (FullPartName "VDC.Normal")
-      (LibraryName
-         "C:\CADENCE\SPB_17.2\TOOLS\CAPTURE\LIBRARY\PSPICE\SOURCE.OLB")
-      (DeviceIndex "0"))
     (R
       (FullPartName "R.Normal")
       (LibraryName "..\..\LIBRARY\PSPICE\ANALOG.OLB")
@@ -79,24 +62,20 @@
     (VSTIM
       (FullPartName "VSTIM.Normal")
       (LibraryName "..\..\LIBRARY\PSPICE\SOURCSTM.OLB")
+      (DeviceIndex "0"))
+    (VDC
+      (FullPartName "VDC.Normal")
+      (LibraryName "..\..\LIBRARY\PSPICE\SOURCE.OLB")
       (DeviceIndex "0")))
   (LastUsedLibraryBrowseDirectory "LIBRARY\PSPICE")
-  (MPSSessionName "mazzshaikh")
+  (MPSSessionName "mazz")
   (GlobalState
     (FileView
       (Path "Design Resources")
-      (Path "Design Resources"
-         "C:\Users\mazzshaikh\Downloads\ELAB-B-main\ELAB-B-main\Lab1\1_4\1_4.dsn")
-      (Path "Design Resources"
-         "C:\Users\mazzshaikh\Downloads\ELAB-B-main\ELAB-B-main\Lab1\1_4\1_4.dsn"
-         "SCHEMATIC1")
-      (Path "Design Resources" "Library")
-      (Path "Outputs")
-      (Path "PSpice Resources")
-      (Path "PSpice Resources" "Simulation Profiles")
-      (Select "Design Resources"
-         "C:\Users\mazzshaikh\Downloads\ELAB-B-main\ELAB-B-main\Lab1\1_4\1_4.dsn"
-         "SCHEMATIC1" "PAGE1"))
+      (Path "Design Resources" "C:\ELAB-B\Lab1\3mins\3mins.dsn")
+      (Path "Design Resources" "C:\ELAB-B\Lab1\3mins\3mins.dsn" "SCHEMATIC1")
+      (Select "Design Resources" "C:\ELAB-B\Lab1\3mins\3mins.dsn" "SCHEMATIC1"
+         "PAGE1"))
     (HierarchyView)
     (Doc
       (Type "COrCapturePMDoc")
@@ -106,11 +85,10 @@
     (Doc
       (Type "COrSchematicDoc")
       (Frame
-        (Placement "44 0 1 -1 -1 -8 -31 52 1688 52 503")
-        (Scroll "119 211")
-        (Zoom "200")
+        (Placement "44 2 3 -1 -1 -8 -31 104 966 104 533")
+        (Scroll "-34 0")
+        (Zoom "100")
         (Occurrence "/"))
-      (Path
-         "C:\USERS\MAZZSHAIKH\DOWNLOADS\ELAB-B-MAIN\ELAB-B-MAIN\LAB1\1_4\1_4.DSN")
+      (Path "C:\ELAB-B\LAB1\3MINS\3MINS.DSN")
       (Schematic "SCHEMATIC1")
       (Page "PAGE1"))))

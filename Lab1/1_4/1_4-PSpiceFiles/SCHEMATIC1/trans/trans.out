@@ -1,7 +1,7 @@
+
+**** 06/10/24 13:45:54 ****** PSpice 17.2.0 (March 2016) ****** ID# 0 ********
 
-**** 06/10/24 13:31:16 ****** PSpice 17.2.0 (March 2016) ****** ID# 0 ********
-
- ** Profile: "SCHEMATIC1-bias"  [ C:\Users\mazzshaikh\Downloads\ELAB-B-main\ELAB-B-main\Lab1\1_4\1_4-pspicefiles\schematic1\bias.sim 
+ ** Profile: "SCHEMATIC1-trans"  [ C:\Users\mazzshaikh\Downloads\ELAB-B-main\ELAB-B-main\Lab1\1_4\1_4-PSpiceFiles\SCHEMATIC1\trans.si
 
 
  ****     CIRCUIT DESCRIPTION
@@ -12,7 +12,7 @@
 
 
 
-** Creating circuit file "bias.cir" 
+** Creating circuit file "trans.cir" 
 ** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
 
 *Libraries: 
@@ -23,7 +23,9 @@
 .lib "nomd.lib" 
 
 *Analysis directives: 
+.TRAN  0 50us 0 
 .OPTIONS ADVCONV
+.OPTIONS DIGINITSTATE= 0
 .PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
 .INC "..\SCHEMATIC1.net" 
 
@@ -31,31 +33,19 @@
 
 **** INCLUDING SCHEMATIC1.net ****
 * source 1_4
-V_V1         0 HIGH -5Vdc
 X_U1         HIGH CLK 0 N15349 HIGH HIGH HIGH 0 M_UN0001 M_UN0002 N15357
 +  M_UN0003 N15349 M_UN0004 $G_DPWR $G_DGND 74193 PARAMS:
 + IO_LEVEL=0 MNTYMXDLY=0
-U_DSTM1         STIM(1,1)
-+ $G_DPWR $G_DGND
-+ CLK 
-+ IO_STM
-+ IO_LEVEL=0
-+  0s 0  
-+ 1us 1  
-+ 2us 0  
-+ 3us 1 
-+ 4us 0  
-+ 5us 1  
-+ 6us 0  
-+ 7us 1  
-+ 8us 0  
-+ 9us 1  
-+ 10us 0  
-+ 11us 1 
-+ 12us 0 
-+ 13us 1 
+V_V1         HIGH 0 5Vdc
+U_DSTM2         STIM(1,1) $G_DPWR $G_DGND CLK IO_STM IO_LEVEL=0 
++ 0 0
++ +.5uS 1
++REPEAT FOREVER
++ +.5uS 0
++  +.5uS 1
++ ENDREPEAT
 
-**** RESUMING bias.cir ****
+**** RESUMING trans.cir ****
 .END
 
 
@@ -121,9 +111,9 @@ X$HIGH_AtoD4
 X$DIGIFPWR 0 DIGIFPWR
 
 
-**** 06/10/24 13:31:16 ****** PSpice 17.2.0 (March 2016) ****** ID# 0 ********
+**** 06/10/24 13:45:54 ****** PSpice 17.2.0 (March 2016) ****** ID# 0 ********
 
- ** Profile: "SCHEMATIC1-bias"  [ C:\Users\mazzshaikh\Downloads\ELAB-B-main\ELAB-B-main\Lab1\1_4\1_4-pspicefiles\schematic1\bias.sim 
+ ** Profile: "SCHEMATIC1-trans"  [ C:\Users\mazzshaikh\Downloads\ELAB-B-main\ELAB-B-main\Lab1\1_4\1_4-PSpiceFiles\SCHEMATIC1\trans.si
 
 
  ****     Diode MODEL PARAMETERS
@@ -140,9 +130,9 @@ X$DIGIFPWR 0 DIGIFPWR
          CJO    2.000000E-12    2.000000E-12 
 
 
-**** 06/10/24 13:31:16 ****** PSpice 17.2.0 (March 2016) ****** ID# 0 ********
+**** 06/10/24 13:45:54 ****** PSpice 17.2.0 (March 2016) ****** ID# 0 ********
 
- ** Profile: "SCHEMATIC1-bias"  [ C:\Users\mazzshaikh\Downloads\ELAB-B-main\ELAB-B-main\Lab1\1_4\1_4-pspicefiles\schematic1\bias.sim 
+ ** Profile: "SCHEMATIC1-trans"  [ C:\Users\mazzshaikh\Downloads\ELAB-B-main\ELAB-B-main\Lab1\1_4\1_4-PSpiceFiles\SCHEMATIC1\trans.si
 
 
  ****     BJT MODEL PARAMETERS
@@ -185,9 +175,9 @@ X$DIGIFPWR 0 DIGIFPWR
            D     .87         
 
 
-**** 06/10/24 13:31:16 ****** PSpice 17.2.0 (March 2016) ****** ID# 0 ********
+**** 06/10/24 13:45:54 ****** PSpice 17.2.0 (March 2016) ****** ID# 0 ********
 
- ** Profile: "SCHEMATIC1-bias"  [ C:\Users\mazzshaikh\Downloads\ELAB-B-main\ELAB-B-main\Lab1\1_4\1_4-pspicefiles\schematic1\bias.sim 
+ ** Profile: "SCHEMATIC1-trans"  [ C:\Users\mazzshaikh\Downloads\ELAB-B-main\ELAB-B-main\Lab1\1_4\1_4-PSpiceFiles\SCHEMATIC1\trans.si
 
 
  ****     Digital Output MODEL PARAMETERS
@@ -226,9 +216,9 @@ X$DIGIFPWR 0 DIGIFPWR
        S7VLO     .8          
 
 
-**** 06/10/24 13:31:16 ****** PSpice 17.2.0 (March 2016) ****** ID# 0 ********
+**** 06/10/24 13:45:54 ****** PSpice 17.2.0 (March 2016) ****** ID# 0 ********
 
- ** Profile: "SCHEMATIC1-bias"  [ C:\Users\mazzshaikh\Downloads\ELAB-B-main\ELAB-B-main\Lab1\1_4\1_4-pspicefiles\schematic1\bias.sim 
+ ** Profile: "SCHEMATIC1-trans"  [ C:\Users\mazzshaikh\Downloads\ELAB-B-main\ELAB-B-main\Lab1\1_4\1_4-PSpiceFiles\SCHEMATIC1\trans.si
 
 
  ****     Digital Gate MODEL PARAMETERS
@@ -248,9 +238,9 @@ X$DIGIFPWR 0 DIGIFPWR
       TPHLMX    0            
 
 
-**** 06/10/24 13:31:16 ****** PSpice 17.2.0 (March 2016) ****** ID# 0 ********
+**** 06/10/24 13:45:54 ****** PSpice 17.2.0 (March 2016) ****** ID# 0 ********
 
- ** Profile: "SCHEMATIC1-bias"  [ C:\Users\mazzshaikh\Downloads\ELAB-B-main\ELAB-B-main\Lab1\1_4\1_4-pspicefiles\schematic1\bias.sim 
+ ** Profile: "SCHEMATIC1-trans"  [ C:\Users\mazzshaikh\Downloads\ELAB-B-main\ELAB-B-main\Lab1\1_4\1_4-PSpiceFiles\SCHEMATIC1\trans.si
 
 
  ****     Digital Edge Triggered FF MODEL PARAMETERS
@@ -300,9 +290,9 @@ X$DIGIFPWR 0 DIGIFPWR
    THCECLKMX    0            
 
 
-**** 06/10/24 13:31:16 ****** PSpice 17.2.0 (March 2016) ****** ID# 0 ********
+**** 06/10/24 13:45:54 ****** PSpice 17.2.0 (March 2016) ****** ID# 0 ********
 
- ** Profile: "SCHEMATIC1-bias"  [ C:\Users\mazzshaikh\Downloads\ELAB-B-main\ELAB-B-main\Lab1\1_4\1_4-pspicefiles\schematic1\bias.sim 
+ ** Profile: "SCHEMATIC1-trans"  [ C:\Users\mazzshaikh\Downloads\ELAB-B-main\ELAB-B-main\Lab1\1_4\1_4-PSpiceFiles\SCHEMATIC1\trans.si
 
 
  ****     Digital IO  MODEL PARAMETERS
@@ -335,12 +325,12 @@ X$DIGIFPWR 0 DIGIFPWR
        TPWRT  100.000000E+03  100.000000E+03 
 
 
-**** 06/10/24 13:31:16 ****** PSpice 17.2.0 (March 2016) ****** ID# 0 ********
+**** 06/10/24 13:45:54 ****** PSpice 17.2.0 (March 2016) ****** ID# 0 ********
 
- ** Profile: "SCHEMATIC1-bias"  [ C:\Users\mazzshaikh\Downloads\ELAB-B-main\ELAB-B-main\Lab1\1_4\1_4-pspicefiles\schematic1\bias.sim 
+ ** Profile: "SCHEMATIC1-trans"  [ C:\Users\mazzshaikh\Downloads\ELAB-B-main\ELAB-B-main\Lab1\1_4\1_4-PSpiceFiles\SCHEMATIC1\trans.si
 
 
- ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
 
 
 ******************************************************************************
@@ -375,27 +365,27 @@ X$DIGIFPWR 0 DIGIFPWR
  DGTL NODE : STATE  DGTL NODE : STATE  DGTL NODE : STATE  DGTL NODE : STATE
 
 
-( X_U1.QA) : X     ( X_U1.QB) : X     (M_UN0003) : X     (X_U1.QCBAR) : X       
+( X_U1.QA) : 0     ( X_U1.QB) : 0     (M_UN0003) : 0     (X_U1.QCBAR) : 1       
 
-( X_U1.TC) : X     (HIGH$AtoD3) : 1   (HIGH$AtoD4) : 1   (X_U1.BOBAR) : X       
+( X_U1.TC) : 1     (HIGH$AtoD3) : 1   (HIGH$AtoD4) : 1   (X_U1.BOBAR) : 0       
 
-( X_U1.SD) : 1     (   $D_HI) : 1     ( X_U1.SA) : X     (  X_U1.C) : 1         
+( X_U1.SD) : 1     (   $D_HI) : 1     ( X_U1.SA) : 0     (  X_U1.C) : 1         
 
-(X_U1.QDBAR) : X   ( X_U1.SB) : X     (  X_U1.D) : 0     (X_U1.DOWN) : 0        
+(X_U1.QDBAR) : 1   ( X_U1.SB) : 0     (  X_U1.D) : 0     (X_U1.DOWN) : 0        
 
-( X_U1.QC) : X     ( X_U1.UP) : 1     (M_UN0004) : 1     ( X_U1.RD) : X         
+( X_U1.QC) : 0     ( X_U1.UP) : 1     (M_UN0004) : 1     ( X_U1.RD) : 0         
 
-(M_UN0001) : X     ( X_U1.RA) : X     ( X_U1.RB) : X     (X_U1.COBAR) : 1       
+(M_UN0001) : 0     ( X_U1.RA) : 1     ( X_U1.RB) : 1     (X_U1.COBAR) : 1       
 
-(  0$AtoD) : 0     (X_U1.QABAR) : X   (X_U1.CLR) : 0     (X_U1.LOADBAR) : X     
+(  0$AtoD) : 0     (X_U1.QABAR) : 1   (X_U1.CLR) : 0     (X_U1.LOADBAR) : 0     
 
-( X_U1.SC) : X     ( X_U1.TD) : X     (HIGH$AtoD) : 1    ( X_U1.TA) : 1         
+( X_U1.SC) : 0     ( X_U1.TD) : 1     (HIGH$AtoD) : 1    ( X_U1.TA) : 1         
 
-(X_U1.MCLR) : 1    (M_UN0002) : X     ( X_U1.TB) : X     ( X_U1.RC) : X         
+(X_U1.MCLR) : 1    (M_UN0002) : 0     ( X_U1.TB) : 1     ( X_U1.RC) : 1         
 
-(     CLK) : 0     (HIGH$AtoD2) : 1   (X_U1.QBBAR) : X   (  N15357) : X         
+(     CLK) : 0     (HIGH$AtoD2) : 1   (X_U1.QBBAR) : 1   (  N15357) : 0         
 
-(  N15349) : X     (  X_U1.A) : 1     ( X_U1.QD) : X     ( 0$AtoD2) : 0         
+(  N15349) : 0     (  X_U1.A) : 1     ( X_U1.QD) : 0     ( 0$AtoD2) : 0         
 
 (  X_U1.B) : 1     
 
@@ -405,19 +395,173 @@ X$DIGIFPWR 0 DIGIFPWR
     VOLTAGE SOURCE CURRENTS
     NAME         CURRENT
 
-    V_V1         8.141E-05
+    V_V1        -8.141E-05
     X$DIGIFPWR.VDPWR  -4.805E-03
     X$DIGIFPWR.VDGND  -2.010E-03
 
     TOTAL POWER DISSIPATION   2.44E-02  WATTS
 
+
+**** 06/10/24 13:45:54 ****** PSpice 17.2.0 (March 2016) ****** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-trans"  [ C:\Users\mazzshaikh\Downloads\ELAB-B-main\ELAB-B-main\Lab1\1_4\1_4-PSpiceFiles\SCHEMATIC1\trans.si
+
+
+ ****     SIMULATION ERRORS
+
+
+******************************************************************************
+
+
+
+
+DIGITAL Message ID#1 (WARNING):
+WIDTH/MIN-LOW Violation at time 7us
+  Device: X_U1.U193DLY
+  Minimum low WIDTH = 20ns
+  NODE: X_U1.LOADBAR, measured WIDTH = 0s
+
+
+DIGITAL Message ID#2 (WARNING):
+WIDTH/MIN-LOW Violation at time 7us
+  Device: X_U1.U193DLY
+  Minimum low WIDTH = 20ns
+  NODE: X_U1.LOADBAR, measured WIDTH = 0s
+
+
+DIGITAL Message ID#3 (WARNING):
+WIDTH/MIN-LOW Violation at time 7us
+  Device: X_U1.U193DLY
+  Minimum low WIDTH = 20ns
+  NODE: X_U1.LOADBAR, measured WIDTH = 0s
+
+
+DIGITAL Message ID#4 (WARNING):
+WIDTH/MIN-LOW Violation at time 7us
+  Device: X_U1.U193DLY
+  Minimum low WIDTH = 20ns
+  NODE: X_U1.LOADBAR, measured WIDTH = 0s
+
+
+DIGITAL Message ID#5 (WARNING):
+WIDTH/MIN-LOW Violation at time 7us
+  Device: X_U1.U193DLY
+  Minimum low WIDTH = 20ns
+  NODE: X_U1.LOADBAR, measured WIDTH = 0s
+
+
+DIGITAL Message ID#6 (WARNING):
+WIDTH/MIN-LOW Violation at time 7us
+  Device: X_U1.U193DLY
+  Minimum low WIDTH = 20ns
+  NODE: X_U1.LOADBAR, measured WIDTH = 0s
+
+
+DIGITAL Message ID#7 (WARNING):
+WIDTH/MIN-LOW Violation at time 7us
+  Device: X_U1.U193DLY
+  Minimum low WIDTH = 20ns
+  NODE: X_U1.LOADBAR, measured WIDTH = 0s
+
+
+DIGITAL Message ID#8 (WARNING):
+WIDTH/MIN-LOW Violation at time 7us
+  Device: X_U1.U193DLY
+  Minimum low WIDTH = 20ns
+  NODE: X_U1.LOADBAR, measured WIDTH = 0s
+
+
+DIGITAL Message ID#9 (WARNING):
+WIDTH/MIN-LOW Violation at time 7us
+  Device: X_U1.U193DLY
+  Minimum low WIDTH = 20ns
+  NODE: X_U1.LOADBAR, measured WIDTH = 0s
+
+
+DIGITAL Message ID#10 (WARNING):
+WIDTH/MIN-LOW Violation at time 7us
+  Device: X_U1.U193DLY
+  Minimum low WIDTH = 20ns
+  NODE: X_U1.LOADBAR, measured WIDTH = 0s
+
+
+DIGITAL Message ID#11 (WARNING):
+WIDTH/MIN-LOW Violation at time 7us
+  Device: X_U1.U193DLY
+  Minimum low WIDTH = 20ns
+  NODE: X_U1.LOADBAR, measured WIDTH = 0s
+
+
+DIGITAL Message ID#12 (WARNING):
+WIDTH/MIN-LOW Violation at time 7us
+  Device: X_U1.U193DLY
+  Minimum low WIDTH = 20ns
+  NODE: X_U1.LOADBAR, measured WIDTH = 0s
+
+
+DIGITAL Message ID#13 (WARNING):
+WIDTH/MIN-LOW Violation at time 7us
+  Device: X_U1.U193DLY
+  Minimum low WIDTH = 20ns
+  NODE: X_U1.LOADBAR, measured WIDTH = 0s
+
+
+DIGITAL Message ID#14 (WARNING):
+WIDTH/MIN-LOW Violation at time 7us
+  Device: X_U1.U193DLY
+  Minimum low WIDTH = 20ns
+  NODE: X_U1.LOADBAR, measured WIDTH = 0s
+
+
+DIGITAL Message ID#15 (WARNING):
+WIDTH/MIN-LOW Violation at time 7us
+  Device: X_U1.U193DLY
+  Minimum low WIDTH = 20ns
+  NODE: X_U1.LOADBAR, measured WIDTH = 0s
+
+
+DIGITAL Message ID#16 (WARNING):
+WIDTH/MIN-LOW Violation at time 7us
+  Device: X_U1.U193DLY
+  Minimum low WIDTH = 20ns
+  NODE: X_U1.LOADBAR, measured WIDTH = 0s
+
+
+DIGITAL Message ID#17 (WARNING):
+WIDTH/MIN-LOW Violation at time 7us
+  Device: X_U1.U193DLY
+  Minimum low WIDTH = 20ns
+  NODE: X_U1.LOADBAR, measured WIDTH = 0s
+
+
+DIGITAL Message ID#18 (WARNING):
+WIDTH/MIN-LOW Violation at time 7us
+  Device: X_U1.U193DLY
+  Minimum low WIDTH = 20ns
+  NODE: X_U1.LOADBAR, measured WIDTH = 0s
+
+
+DIGITAL Message ID#19 (WARNING):
+WIDTH/MIN-LOW Violation at time 7us
+  Device: X_U1.U193DLY
+  Minimum low WIDTH = 20ns
+  NODE: X_U1.LOADBAR, measured WIDTH = 0s
+
+
+DIGITAL Message ID#20 (WARNING):
+WIDTH/MIN-LOW Violation at time 7us
+  Device: X_U1.U193DLY
+  Minimum low WIDTH = 20ns
+  NODE: X_U1.LOADBAR, measured WIDTH = 0s
+  ERRORLIMIT reached
+
 
 
           JOB CONCLUDED
 
-**** 06/10/24 13:31:16 ****** PSpice 17.2.0 (March 2016) ****** ID# 0 ********
+**** 06/10/24 13:45:54 ****** PSpice 17.2.0 (March 2016) ****** ID# 0 ********
 
- ** Profile: "SCHEMATIC1-bias"  [ C:\Users\mazzshaikh\Downloads\ELAB-B-main\ELAB-B-main\Lab1\1_4\1_4-pspicefiles\schematic1\bias.sim 
+ ** Profile: "SCHEMATIC1-trans"  [ C:\Users\mazzshaikh\Downloads\ELAB-B-main\ELAB-B-main\Lab1\1_4\1_4-PSpiceFiles\SCHEMATIC1\trans.si
 
 
  ****     JOB STATISTICS SUMMARY
@@ -427,5 +571,5 @@ X$DIGIFPWR 0 DIGIFPWR
 
 
 
-  Total job time (using Solver 1)   =         .03
+  Total job time (using Solver 1)   =         .06
 
