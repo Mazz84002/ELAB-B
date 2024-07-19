@@ -1,0 +1,221 @@
+
+**** 07/18/24 19:09:58 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-trans"  [ c:\elab-b\lab4\6\sr-PSpiceFiles\SCHEMATIC1\trans.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "trans.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+.LIB "../../../sr-pspicefiles/sr.lib" 
+* From [PSPICE NETLIST] section of C:\Users\mazz\cdssetup\OrCAD_PSpice\17.2.0\PSpice.ini file:
+.lib "nomd.lib" 
+
+*Analysis directives: 
+.TRAN  0 4ms 0 0.1m 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source SR
+.EXTERNAL OUTPUT output
+.EXTERNAL OUTPUT input
+Q_Q1         N14621 N14564 N14544 Q2N3906
+Q_Q2         N14564 N14564 N14560 Q2N3906
+R_R1         N14544 N14548  200 TC=0,0 
+R_R2         N14560 N14548  200 TC=0,0 
+Q_Q3         OUTPUT N14621 N14564 Q2N3906
+R_R3         N14731 N14548  8k TC=0,0 
+R_R4         0 N14731  1.6k TC=0,0 
+R_R5         N148521 N14874  1k TC=0,0 
+R_R6         N148681 N14878  1k TC=0,0 
+M_M1         N148521 INPUT N14970 N14970 Mbreakn           
+M_M2         N148681 0 N14977 N14977 Mbreakn           
+X_R7         N14970 N15215 N14977 POT PARAMS: SET=0.5 VALUE=1K
+R_R8         0 INPUT  1M TC=0,0 
+R_R9         0 0  1M TC=0,0 
+R_R10         0 0  1M TC=0,0 
+M_M3         N15215 N15223 N15219 N15219 Mbreakn           
+M_M4         N15223 N15223 N15230 N15230 Mbreakn           
+R_R11         N15237 N15219  1k TC=0,0 
+R_R12         N15237 N15230  1k TC=0,0 
+R_R13         0 N15223  1k TC=0,0 
+V_V1         N14548 0 15Vdc
+V_V2         N15237 0 -15Vdc
+C_C1         0 OUTPUT  820p  TC=0,0 
+R_Ry         0 N16232  8.5k TC=0,0 
+X_R15         N15223 N16232 N16232 POT PARAMS: SET=0.056 VALUE=2.5k
+V_V3         INPUT 0  
++PULSE 0 100m 1m 1n 1n 400m 800m
+Q_Q4         OUTPUT N14731 N14878 Q2N2222
+Q_Q5         N14621 N14731 N14874 Q2N2222
+
+**** RESUMING trans.cir ****
+.END
+
+**** 07/18/24 19:09:58 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-trans"  [ c:\elab-b\lab4\6\sr-PSpiceFiles\SCHEMATIC1\trans.sim ] 
+
+
+ ****     BJT MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               Q2N3906         Q2N2222         
+               PNP             NPN             
+       LEVEL    1               1            
+          IS    1.410000E-15   14.340000E-15 
+          BF  181             255.9          
+          NF    1               1            
+         VAF   18.7            74.03         
+         IKF     .08             .2847       
+         ISE                   14.340000E-15 
+          NE                    1.307        
+          BR    4.977           6.092        
+          NR    1               1            
+         ISS    0               0            
+          RB   10              10            
+          RE    0               0            
+          RC    2.5             1            
+         CJE    8.063000E-12   22.010000E-12 
+         VJE     .75             .75         
+         MJE     .3677           .377        
+         CJC    9.728000E-12    7.306000E-12 
+         VJC     .75             .75         
+         MJC     .5776           .3416       
+        XCJC    1               1            
+         CJS    0               0            
+         VJS     .75             .75         
+          TF  179.300000E-12  411.100000E-12 
+         XTF    6               3            
+         VTF    4               1.7          
+         ITF     .4              .6          
+          TR   33.420000E-09   46.910000E-09 
+         XTB    1.5             1.5          
+          KF    0               0            
+          AF    1               1            
+          CN    2.2             2.42         
+           D     .52             .87         
+
+
+**** 07/18/24 19:09:58 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-trans"  [ c:\elab-b\lab4\6\sr-PSpiceFiles\SCHEMATIC1\trans.sim ] 
+
+
+ ****     MOSFET MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               Mbreakn         
+               NMOS            
+       LEVEL    1            
+           L  250.000000E-09 
+           W    2.500000E-06 
+         VTO    2            
+          KP  100.000000E-06 
+       GAMMA    0            
+         PHI     .6          
+      LAMBDA    0            
+          IS   10.000000E-15 
+          JS    0            
+          PB     .8          
+        PBSW     .8          
+          CJ    0            
+        CJSW    0            
+        CGSO    0            
+        CGDO    0            
+        CGBO    0            
+         TOX    0            
+          XJ    0            
+       UCRIT   10.000000E+03 
+      DIOMOD    1            
+         VFB    0            
+        LETA    0            
+        WETA    0            
+          U0    0            
+        TEMP    0            
+         VDD    5            
+       XPART    0            
+
+
+**** 07/18/24 19:09:58 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-trans"  [ c:\elab-b\lab4\6\sr-PSpiceFiles\SCHEMATIC1\trans.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(INPUT)    0.0000  (N14544)   14.4910 (N14548)   15.0000 (N14560)   14.4920     
+
+(N14564)   13.7610 (N14621)   13.0360 (N14731)    2.4617 (N14874)    1.7949     
+
+(N14878)    1.7936 (N14970)   -4.2619 (N14977)   -4.2619 (N15215)   -5.5410     
+
+(N15219)   -9.8837 (N15223)   -4.6849 (N15230)   -9.8837 (N15237)  -15.0000     
+
+(N16232)   -3.6668 (OUTPUT)    8.8892 (N148521)    -.7633                       
+
+(N148681)    -.7646                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1        -6.655E-03
+    V_V2         1.023E-02
+    V_V3         0.000E+00
+
+    TOTAL POWER DISSIPATION   2.53E-01  WATTS
+
+
+
+          JOB CONCLUDED
+
+**** 07/18/24 19:09:58 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-trans"  [ c:\elab-b\lab4\6\sr-PSpiceFiles\SCHEMATIC1\trans.sim ] 
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  Total job time (using Solver 1)   =         .09
+

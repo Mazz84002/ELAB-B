@@ -1,0 +1,452 @@
+
+**** 06/18/24 13:59:34 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-trans"  [ C:\ELAB-B\Lab3\2\2ADC-PSpiceFiles\SCHEMATIC1\trans.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "trans.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\Users\mazz\cdssetup\OrCAD_PSpice\17.2.0\PSpice.ini file:
+.lib "nomd.lib" 
+
+*Analysis directives: 
+.TRAN  0 5us 0 
+.OPTIONS ADVCONV
+.OPTIONS DIGINITSTATE= 0
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source 2ADC
+U_DSTM1         STIM(1,1) $G_DPWR $G_DGND N14644 IO_STM IO_LEVEL=0 
++ 0 0
++ +.5uS 1
++REPEAT FOREVER
++ +.5uS 0
++  +.5uS 1
++ ENDREPEAT
+R_R1         A N14538  10k TC=0,0 
+R_R2         A N14531  20k TC=0,0 
+R_R3         B N14524  10k TC=0,0 
+R_R4         B N14517  20k TC=0,0 
+R_R5         0 A  20k TC=0,0 
+R_R6         N14614 B  20k TC=0,0 
+X_U1         N14644 N14614 N14517 N14524 N14531 N14538 M_UN0001 M_UN0002
++  M_UN0003 $G_CD4000_VDD $G_CD4000_VSS CD4024B PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+
+**** RESUMING trans.cir ****
+.END
+
+
+**** Generated AtoD and DtoA Interfaces ****
+
+*
+* Analog/Digital interface for node N14538
+*
+* Moving X_U1.UQ:OUT3 from analog node N14538 to new digital node N14538$DtoA
+X$N14538_DtoA1
++ N14538$DtoA
++ N14538
++ $G_CD4000_VDD
++ $G_CD4000_VSS
++ DtoA_4000B
++       PARAMS: DRVH=   1.4430E+03 DRVL=   1.4430E+03 CAPACITANCE=   0     
+*
+* Analog/Digital interface for node N14531
+*
+* Moving X_U1.UQ:OUT2 from analog node N14531 to new digital node N14531$DtoA
+X$N14531_DtoA1
++ N14531$DtoA
++ N14531
++ $G_CD4000_VDD
++ $G_CD4000_VSS
++ DtoA_4000B
++       PARAMS: DRVH=   1.4430E+03 DRVL=   1.4430E+03 CAPACITANCE=   0     
+*
+* Analog/Digital interface for node N14524
+*
+* Moving X_U1.UQ:OUT1 from analog node N14524 to new digital node N14524$DtoA
+X$N14524_DtoA1
++ N14524$DtoA
++ N14524
++ $G_CD4000_VDD
++ $G_CD4000_VSS
++ DtoA_4000B
++       PARAMS: DRVH=   1.4430E+03 DRVL=   1.4430E+03 CAPACITANCE=   0     
+*
+* Analog/Digital interface for node N14517
+*
+* Moving X_U1.UQ1:Q1 from analog node N14517 to new digital node N14517$DtoA
+X$N14517_DtoA1
++ N14517$DtoA
++ N14517
++ $G_CD4000_VDD
++ $G_CD4000_VSS
++ DtoA_4000B
++       PARAMS: DRVH=   1.4430E+03 DRVL=   1.4430E+03 CAPACITANCE=   0     
+*
+* Analog/Digital interface for node N14614
+*
+* Moving X_U1.UCLRB:IN1 from analog node N14614 to new digital node N14614$AtoD
+X$N14614_AtoD1
++ N14614
++ N14614$AtoD
++ $G_CD4000_VDD
++ $G_CD4000_VSS
++ AtoD_4000B
++       PARAMS: CAPACITANCE=   0     
+*
+* Analog/Digital interface power supply subcircuits
+*
+X$CD4000_PWR 0 CD4000_PWR
+
+
+**** 06/18/24 13:59:34 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-trans"  [ C:\ELAB-B\Lab3\2\2ADC-PSpiceFiles\SCHEMATIC1\trans.sim ] 
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               D74CLMP         
+          IS    1.000000E-15 
+          RS    2            
+         CJO    2.000000E-12 
+
+
+**** 06/18/24 13:59:34 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-trans"  [ C:\ELAB-B\Lab3\2\2ADC-PSpiceFiles\SCHEMATIC1\trans.sim ] 
+
+
+ ****     Digital Input MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               DIN4000B        
+      S0NAME 0               
+       S0TSW   15.000000E-09 
+       S0RLO    1            
+       S0RHI   80.000000E+03 
+      S1NAME 1               
+       S1TSW   15.000000E-09 
+       S1RLO   40.000000E+03 
+       S1RHI    1            
+      S2NAME X               
+       S2TSW   15.000000E-09 
+       S2RLO  800            
+       S2RHI  800            
+      S3NAME R               
+       S3TSW   15.000000E-09 
+       S3RLO  800            
+       S3RHI  800            
+      S4NAME F               
+       S4TSW   15.000000E-09 
+       S4RLO  800            
+       S4RHI  800            
+      S5NAME Z               
+       S5TSW   15.000000E-09 
+       S5RLO    1.000000E+06 
+       S5RHI    1.000000E+06 
+
+
+**** 06/18/24 13:59:34 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-trans"  [ C:\ELAB-B\Lab3\2\2ADC-PSpiceFiles\SCHEMATIC1\trans.sim ] 
+
+
+ ****     Digital Output MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               DO4000B         
+    TIMESTEP  100.000000E-12 
+      S0NAME X               
+       S0VHI     .5          
+       S0VLO    -.5          
+      S1NAME 0               
+       S1VHI    -.5          
+       S1VLO   -3            
+      S2NAME R               
+       S2VHI     .05         
+       S2VLO    -.5          
+      S3NAME R               
+       S3VHI     .5          
+       S3VLO    -.05         
+      S4NAME X               
+       S4VHI     .5          
+       S4VLO    -.5          
+      S5NAME 1               
+       S5VHI    3            
+       S5VLO     .5          
+      S6NAME F               
+       S6VHI     .5          
+       S6VLO    -.05         
+      S7NAME F               
+       S7VHI     .05         
+       S7VLO    -.5          
+
+
+**** 06/18/24 13:59:34 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-trans"  [ C:\ELAB-B\Lab3\2\2ADC-PSpiceFiles\SCHEMATIC1\trans.sim ] 
+
+
+ ****     Digital Gate MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               D0_GATE         D_CD4024B_1     
+      TPLHMN    0              40.000000E-09 
+      TPLHTY    0             100.000000E-09 
+      TPLHMX    0             200.000000E-09 
+      TPHLMN    0              40.000000E-09 
+      TPHLTY    0             100.000000E-09 
+      TPHLMX    0             200.000000E-09 
+
+
+**** 06/18/24 13:59:34 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-trans"  [ C:\ELAB-B\Lab3\2\2ADC-PSpiceFiles\SCHEMATIC1\trans.sim ] 
+
+
+ ****     Digital Edge Triggered FF MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               D_CD4024B_2     D_CD4024B_3     D_CD4024B_4     
+  TPCLKQLHMN   32.000000E-09    0              72.000000E-09 
+  TPCLKQLHTY   80.000000E-09    0             180.000000E-09 
+  TPCLKQLHMX  160.000000E-09    0             360.000000E-09 
+  TPCLKQHLMN   32.000000E-09    0              72.000000E-09 
+  TPCLKQHLTY   80.000000E-09    0             180.000000E-09 
+  TPCLKQHLMX  160.000000E-09    0             360.000000E-09 
+   TPPCQLHMN    0               0               0            
+   TPPCQLHTY    0               0               0            
+   TPPCQLHMX    0               0               0            
+   TPPCQHLMN    0              16.000000E-09   56.000000E-09 
+   TPPCQHLTY    0              40.000000E-09  140.000000E-09 
+   TPPCQHLMX    0              80.000000E-09  280.000000E-09 
+    TWCLKLMN  140.000000E-09    0             140.000000E-09 
+    TWCLKLTY  140.000000E-09    0             140.000000E-09 
+    TWCLKLMX  140.000000E-09    0             140.000000E-09 
+    TWCLKHMN  140.000000E-09    0             140.000000E-09 
+    TWCLKHTY  140.000000E-09    0             140.000000E-09 
+    TWCLKHMX  140.000000E-09    0             140.000000E-09 
+     TWPCLMN  200.000000E-09  200.000000E-09  200.000000E-09 
+     TWPCLTY  200.000000E-09  200.000000E-09  200.000000E-09 
+     TWPCLMX  200.000000E-09  200.000000E-09  200.000000E-09 
+   TSUDCLKMN    0               0               0            
+   TSUDCLKTY    0               0               0            
+   TSUDCLKMX    0               0               0            
+ TSUPCCLKHMN  350.000000E-09    0             350.000000E-09 
+ TSUPCCLKHTY  350.000000E-09    0             350.000000E-09 
+ TSUPCCLKHMX  350.000000E-09    0             350.000000E-09 
+    THDCLKMN    0               0               0            
+    THDCLKTY    0               0               0            
+    THDCLKMX    0               0               0            
+  TSUCECLKMN    0               0               0            
+  TSUCECLKTY    0               0               0            
+  TSUCECLKMX    0               0               0            
+   THCECLKMN    0               0               0            
+   THCECLKTY    0               0               0            
+   THCECLKMX    0               0               0            
+
+
+**** 06/18/24 13:59:34 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-trans"  [ C:\ELAB-B\Lab3\2\2ADC-PSpiceFiles\SCHEMATIC1\trans.sim ] 
+
+
+ ****     Digital IO  MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               IO_STM          IO_4000B_ST     IO_4000B        
+        DRVL    0               1.443000E+03    1.443000E+03 
+        DRVH    0               1.443000E+03    1.443000E+03 
+       AtoD1                 AtoD_4000B_ST   AtoD_4000B      
+       AtoD2                 AtoD_4000B_ST   AtoD_4000B_NX   
+       AtoD3                 AtoD_4000B_ST   AtoD_4000B      
+       AtoD4                 AtoD_4000B_ST   AtoD_4000B_NX   
+       DtoA1 DtoA_STM        DtoA_4000B      DtoA_4000B      
+       DtoA2 DtoA_STM        DtoA_4000B      DtoA_4000B      
+       DtoA3 DtoA_STM        DtoA_4000B      DtoA_4000B      
+       DtoA4 DtoA_STM        DtoA_4000B      DtoA_4000B      
+    DIGPOWER                 CD4000_PWR      CD4000_PWR      
+      TSWHL1                    7.720000E-09    7.720000E-09 
+      TSWHL2                    7.860000E-09    7.860000E-09 
+      TSWHL3                    9.710000E-09    9.710000E-09 
+      TSWHL4                    9.630000E-09    9.630000E-09 
+      TSWLH1                    7.560000E-09    7.560000E-09 
+      TSWLH2                    7.400000E-09    7.400000E-09 
+      TSWLH3                    9.410000E-09    9.410000E-09 
+      TSWLH4                    9.240000E-09    9.240000E-09 
+       TPWRT  100.000000E+03  100.000000E+03  100.000000E+03 
+
+
+**** 06/18/24 13:59:34 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-trans"  [ C:\ELAB-B\Lab3\2\2ADC-PSpiceFiles\SCHEMATIC1\trans.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(    A)     .0304  (    B)     .0415  (N14517)     .0411 (N14524)     .0412     
+
+(N14531)     .0408 (N14538)     .0405 (N14614)     .0425                        
+
+($G_CD4000_VDD)    5.0000             ($G_CD4000_VSS)    0.0000                 
+
+(X$N14614_AtoD1.NORM)   -1.2288       (X$N14517_DtoA1.DRVGND)     .0411         
+
+(X$N14517_DtoA1.DRVPWR)    4.9692     (X$N14524_DtoA1.DRVGND)     .0411         
+
+(X$N14524_DtoA1.DRVPWR)    4.9692     (X$N14531_DtoA1.DRVGND)     .0407         
+
+(X$N14531_DtoA1.DRVPWR)    4.9692     (X$N14538_DtoA1.DRVGND)     .0404         
+
+(X$N14538_DtoA1.DRVPWR)    4.9692     (X$N14517_DtoA1.X1.DRVN)     .0015        
+
+(X$N14517_DtoA1.X1.DRVP)     .0020    (X$N14524_DtoA1.X1.DRVN)     .0015        
+
+(X$N14524_DtoA1.X1.DRVP)     .0020    (X$N14531_DtoA1.X1.DRVN)     .0015        
+
+(X$N14531_DtoA1.X1.DRVP)     .0020    (X$N14538_DtoA1.X1.DRVN)     .0015        
+
+(X$N14538_DtoA1.X1.DRVP)     .0020    (X$N14614_AtoD1.XNORM.THRESHOLD)    1.5000
+
+
+
+ DGTL NODE : STATE  DGTL NODE : STATE  DGTL NODE : STATE  DGTL NODE : STATE
+
+
+(N14538$DtoA) : 0  (M_UN0003) : 0     (N14524$DtoA) : 0  ( X_U1.T4) : 0         
+
+(N14614$AtoD) : 0  (X_U1.Q1I) : 0     (   $D_HI) : 1     (X_U1.Q2I) : 0         
+
+( X_U1.T5) : 0     (M_UN0001) : 0     (X_U1.CLRB) : 1    ( X_U1.T6) : 0         
+
+(X_U1.Q4I) : 0     (X_U1.Q3I) : 0     (N14531$DtoA) : 0  ( X_U1.T3) : 0         
+
+(N14517$DtoA) : 0  (   $D_NC) : Z     ( X_U1.IN) : 0     (X_U1.Q5I) : 0         
+
+(M_UN0002) : 0     (X_U1.Q1ID) : 0    (X_U1.Q6I) : 0     ( X_U1.T7) : 0         
+
+(  N14644) : 0     (X_U1.Q7I) : 0     
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    X$CD4000_PWR.VVDD  -2.515E-04
+    X$CD4000_PWR.VVSS  -6.521E-06
+
+    TOTAL POWER DISSIPATION   1.26E-03  WATTS
+
+
+**** 06/18/24 13:59:34 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-trans"  [ C:\ELAB-B\Lab3\2\2ADC-PSpiceFiles\SCHEMATIC1\trans.sim ] 
+
+
+ ****     SIMULATION ERRORS
+
+
+******************************************************************************
+
+
+
+
+DIGITAL Message ID#1 (WARNING):
+GLITCH Hazard at time 1.4733us
+  Device: X_U1.UQ1
+
+  On CLEAR input (X_U1.CLRB)
+  Minimum TWPCL is  200.000E-09
+
+DIGITAL Message ID#2 (WARNING):
+GLITCH Hazard at time 1.4733us
+  Device: X_U1.UQ1I
+
+  On CLEAR input (X_U1.CLRB)
+  Minimum TWPCL is  200.000E-09
+
+DIGITAL Message ID#3 (SERIOUS):
+PERSISTENT Hazard at time 1.4733us
+  On D/A Node "N14517$DtoA"
+  See Message ID#1 for probable cause.
+
+DIGITAL Message ID#4 (SERIOUS):
+PERSISTENT Hazard at time 1.4733us
+  Device: On D/A interface X$N14517_DtoA1.N1, "N14517$DtoA"
+  See Message ID#1 for probable cause.
+
+
+          JOB CONCLUDED
+
+**** 06/18/24 13:59:34 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-trans"  [ C:\ELAB-B\Lab3\2\2ADC-PSpiceFiles\SCHEMATIC1\trans.sim ] 
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  Total job time (using Solver 1)   =         .14
+

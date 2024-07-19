@@ -1,0 +1,4 @@
+ lib=c:\elab-b\lab4\6\sr-pspicefiles\sr.lib, offset=42, size=51
+ lib=c:\elab-b\lab4\6\sr-pspicefiles\sr.lib, offset=94, size=296
+ lib=C:\Cadence\SPB_17.2\tools\PSpice\Library\bipolar.lib, offset=13005, size=562
+ lib=C:\Cadence\SPB_17.2\tools\PSpice\Library\breakout.lib, offset=9201, size=133

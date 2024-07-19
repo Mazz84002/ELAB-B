@@ -1,0 +1,28 @@
+("q2n3906"
+    ("Creator"	"Device property file created by Property Controller")
+    ("device_info"
+        ("SYMBOL_NAME"	"pnp")
+        ("MODEL_TYPE"	"7")
+    )
+    ("model_params"
+        ("level_0"
+        )
+    )
+    ("device_pre_smoke"
+        ("TERM_IC"	"C")
+        ("TERM_IB"	"B")
+        ("NODE_VC"	"C")
+        ("NODE_VB"	"B")
+        ("NODE_VE"	"E")
+        ("DERATE_TYPE"	"PNP")
+    )
+    ("device_max_ops"
+        ("VCB"	"40")
+        ("VCE"	"40")
+        ("VEB"	"5")
+        ("PDM"	"0.625")
+        ("TJ"	"150")
+        ("RJC"	"83.3")
+        ("RCA"	"116.7")
+    )
+)

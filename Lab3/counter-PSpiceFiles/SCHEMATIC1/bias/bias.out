@@ -1,0 +1,574 @@
+
+**** 07/16/24 21:22:54 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-bias"  [ c:\elab-b\lab3\counter-pspicefiles\schematic1\bias.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "bias.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\Users\mazz\cdssetup\OrCAD_PSpice\17.2.0\PSpice.ini file:
+.lib "nomd.lib" 
+
+*Analysis directives: 
+.TRAN  0 40m 0 
+.OPTIONS ADVCONV
+.OPTIONS DIGINITSTATE= 0
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source COUNTER
+.EXTERNAL OUTPUT clock
+.EXTERNAL OUTPUT start
+R_R1         0 N14823  2k TC=0,0 
+R_R2         N14830 N14823  1k TC=0,0 
+R_R3         N14830 N14890  2k TC=0,0 
+R_R4         N14834 N14897  2k TC=0,0 
+R_R5         N14838 N14920  2k TC=0,0 
+R_R6         N14842 N14927  2k TC=0,0 
+R_R7         N14830 N14834  1k TC=0,0 
+R_R8         N14834 N14838  1k TC=0,0 
+R_R9         N14838 N14842  1k TC=0,0 
+X_U2A         N14842 N15179 N17095 0 N14980 LM324
+X_U2B         N16267 N14980 N15094 0 N15218 LM324
+U_DSTM1         STIM(1,1) $G_DPWR $G_DGND CLOCK IO_STM IO_LEVEL=0 
++ 0 0
++ +500uS 1
++REPEAT FOREVER
++ +500uS 0
++  +500uS 1
++ ENDREPEAT
+V_V1         N17095 0 5Vdc
+R_R10         0 N15179  51k TC=0,0 
+R_R11         N14980 N15179  1k TC=0,0 
+U_DSTM2         STIM(1,1) $G_DPWR $G_DGND START IO_STM IO_LEVEL=0 
++ 0 0
++ +20mS 1
++REPEAT FOREVER
++ +2mS 0
++  +20mS 1
++ ENDREPEAT
+X_U7         N15888 START N14890 M_UN0001 N14897 M_UN0002 N14920 M_UN0003
++  N14927 $G_CD4000_VDD $G_CD4000_VSS CD4024A PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+X_U8A         CLOCK N15218 N16199 $G_DPWR $G_DGND 7400 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+X_U8B         N16199 N16199 N15888 $G_DPWR $G_DGND 7400 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+V_V2         N16267 0 3.5Vdc
+V_V3         N15094 0 5Vdc
+
+**** RESUMING bias.cir ****
+.END
+
+
+**** Generated AtoD and DtoA Interfaces ****
+
+*
+* Analog/Digital interface for node N14890
+*
+* Moving X_U7.UQ:OUT1 from analog node N14890 to new digital node N14890$DtoA
+X$N14890_DtoA1
++ N14890$DtoA
++ N14890
++ $G_CD4000_VDD
++ $G_CD4000_VSS
++ DtoA_4000A
++       PARAMS: DRVH=   1.6490E+03 DRVL=   1.6490E+03 CAPACITANCE=   0     
+*
+* Analog/Digital interface for node N14897
+*
+* Moving X_U7.UQ:OUT3 from analog node N14897 to new digital node N14897$DtoA
+X$N14897_DtoA1
++ N14897$DtoA
++ N14897
++ $G_CD4000_VDD
++ $G_CD4000_VSS
++ DtoA_4000A
++       PARAMS: DRVH=   1.6490E+03 DRVL=   1.6490E+03 CAPACITANCE=   0     
+*
+* Analog/Digital interface for node N14920
+*
+* Moving X_U7.UQ:OUT5 from analog node N14920 to new digital node N14920$DtoA
+X$N14920_DtoA1
++ N14920$DtoA
++ N14920
++ $G_CD4000_VDD
++ $G_CD4000_VSS
++ DtoA_4000A
++       PARAMS: DRVH=   1.6490E+03 DRVL=   1.6490E+03 CAPACITANCE=   0     
+*
+* Analog/Digital interface for node N14927
+*
+* Moving X_U7.UQ:OUT7 from analog node N14927 to new digital node N14927$DtoA
+X$N14927_DtoA1
++ N14927$DtoA
++ N14927
++ $G_CD4000_VDD
++ $G_CD4000_VSS
++ DtoA_4000A
++       PARAMS: DRVH=   1.6490E+03 DRVL=   1.6490E+03 CAPACITANCE=   0     
+*
+* Analog/Digital interface for node N15218
+*
+* Moving X_U8A.U1:IN2 from analog node N15218 to new digital node N15218$AtoD
+X$N15218_AtoD1
++ N15218
++ N15218$AtoD
++ $G_DPWR
++ $G_DGND
++ AtoD_STD
++       PARAMS: CAPACITANCE=   0     
+*
+* Analog/Digital interface power supply subcircuits
+*
+X$DIGIFPWR 0 DIGIFPWR
+X$CD4000_PWR 0 CD4000_PWR
+
+
+**** 07/16/24 21:22:54 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-bias"  [ c:\elab-b\lab3\counter-pspicefiles\schematic1\bias.sim ] 
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U2A.dx        X_U2A.dy        X_U2B.dx        X_U2B.dy        
+          IS  800.000000E-18  800.000000E-18  800.000000E-18  800.000000E-18 
+          RS    1               1.000000E-03    1               1.000000E-03 
+         CJO                   10.000000E-12                   10.000000E-12 
+
+
+               D74CLMP         D74             
+          IS    1.000000E-15  100.000000E-18 
+          RS    2              25            
+         CJO    2.000000E-12    2.000000E-12 
+
+
+**** 07/16/24 21:22:54 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-bias"  [ c:\elab-b\lab3\counter-pspicefiles\schematic1\bias.sim ] 
+
+
+ ****     BJT MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U2A.qx        X_U2B.qx        Q74             
+               PNP             PNP             NPN             
+       LEVEL    1               1               1            
+          IS  800.000000E-18  800.000000E-18  100.000000E-18 
+          BF  166.7           166.7            49            
+          NF    1               1               1            
+         ISE                                  100.000000E-18 
+          BR    1               1                .03         
+          NR    1               1               1            
+         ISC                                  400.000000E-18 
+         ISS    0               0               0            
+          RB                                   50            
+          RE    0               0               0            
+          RC    0               0              20            
+         CJE    0               0               1.000000E-12 
+         VJE     .75             .75             .9          
+         MJE                                     .5          
+         CJC    0               0             500.000000E-15 
+         VJC     .75             .75             .8          
+         MJC     .33             .33             .33         
+        XCJC    1               1               1            
+         CJS    0               0               3.000000E-12 
+         VJS     .75             .75             .7          
+         MJS                                     .33         
+          TF                                  200.000000E-12 
+          TR                                   10.000000E-09 
+          KF    0               0               0            
+          AF    1               1               1            
+          CN    2.2             2.2             2.42         
+           D     .52             .52             .87         
+
+
+**** 07/16/24 21:22:54 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-bias"  [ c:\elab-b\lab3\counter-pspicefiles\schematic1\bias.sim ] 
+
+
+ ****     Current Controlled Switch MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U2A.sw2       X_U2A.sw1       X_U2A.sw3       X_U2A.sw4       
+         RON    1               1               1               1            
+        ROFF   10.000000E+06   10.000000E+06   10.000000E+06   10.000000E+06 
+         ION    0              -1.000000E-06   -1.000000E-06    0            
+        IOFF   -1.000000E-06    0               0              -1.000000E-06 
+
+
+               X_U2B.sw2       X_U2B.sw1       X_U2B.sw3       X_U2B.sw4       
+         RON    1               1               1               1            
+        ROFF   10.000000E+06   10.000000E+06   10.000000E+06   10.000000E+06 
+         ION    0              -1.000000E-06   -1.000000E-06    0            
+        IOFF   -1.000000E-06    0               0              -1.000000E-06 
+
+
+**** 07/16/24 21:22:54 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-bias"  [ c:\elab-b\lab3\counter-pspicefiles\schematic1\bias.sim ] 
+
+
+ ****     Digital Input MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               DIN4000A        
+      S0NAME 0               
+       S0TSW   15.000000E-09 
+       S0RLO    1            
+       S0RHI   80.000000E+03 
+      S1NAME 1               
+       S1TSW   15.000000E-09 
+       S1RLO   40.000000E+03 
+       S1RHI    1            
+      S2NAME X               
+       S2TSW   15.000000E-09 
+       S2RLO  800            
+       S2RHI  800            
+      S3NAME R               
+       S3TSW   15.000000E-09 
+       S3RLO  800            
+       S3RHI  800            
+      S4NAME F               
+       S4TSW   15.000000E-09 
+       S4RLO  800            
+       S4RHI  800            
+      S5NAME Z               
+       S5TSW   15.000000E-09 
+       S5RLO    1.000000E+06 
+       S5RHI    1.000000E+06 
+
+
+**** 07/16/24 21:22:54 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-bias"  [ c:\elab-b\lab3\counter-pspicefiles\schematic1\bias.sim ] 
+
+
+ ****     Digital Output MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               DO74            
+    TIMESTEP  100.000000E-12 
+      S0NAME X               
+       S0VHI    2            
+       S0VLO     .8          
+      S1NAME 0               
+       S1VHI     .8          
+       S1VLO   -1.5          
+      S2NAME R               
+       S2VHI    1.4          
+       S2VLO     .8          
+      S3NAME R               
+       S3VHI    2            
+       S3VLO    1.3          
+      S4NAME X               
+       S4VHI    2            
+       S4VLO     .8          
+      S5NAME 1               
+       S5VHI    7            
+       S5VLO    2            
+      S6NAME F               
+       S6VHI    2            
+       S6VLO    1.3          
+      S7NAME F               
+       S7VHI    1.4          
+       S7VLO     .8          
+
+
+**** 07/16/24 21:22:54 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-bias"  [ c:\elab-b\lab3\counter-pspicefiles\schematic1\bias.sim ] 
+
+
+ ****     Digital Gate MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               D0_GATE         D_CD4024A_3     D_00            
+      TPLHMN    0              70.000000E-09    4.400000E-09 
+      TPLHTY    0             175.000000E-09   11.000000E-09 
+      TPLHMX    0             400.000000E-09   22.000000E-09 
+      TPHLMN    0              70.000000E-09    2.800000E-09 
+      TPHLTY    0             175.000000E-09    7.000000E-09 
+      TPHLMX    0             400.000000E-09   15.000000E-09 
+
+
+**** 07/16/24 21:22:54 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-bias"  [ c:\elab-b\lab3\counter-pspicefiles\schematic1\bias.sim ] 
+
+
+ ****     Digital Edge Triggered FF MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               D_CD4024A_1     D_CD4024A_2     
+  TPCLKQLHMN    0               0            
+  TPCLKQLHTY    0               0            
+  TPCLKQLHMX    0               0            
+  TPCLKQHLMN    0               0            
+  TPCLKQHLTY    0               0            
+  TPCLKQHLMX    0               0            
+   TPPCQLHMN    0               0            
+   TPPCQLHTY    0               0            
+   TPPCQLHMX    0               0            
+   TPPCQHLMN  130.000000E-09  130.000000E-09 
+   TPPCQHLTY  325.000000E-09  325.000000E-09 
+   TPPCQHLMX  400.000000E-09  400.000000E-09 
+    TWCLKLMN  500.000000E-09    0            
+    TWCLKLTY  500.000000E-09    0            
+    TWCLKLMX  500.000000E-09    0            
+    TWCLKHMN  500.000000E-09    0            
+    TWCLKHTY  500.000000E-09    0            
+    TWCLKHMX  500.000000E-09    0            
+     TWPCLMN  600.000000E-09  600.000000E-09 
+     TWPCLTY  600.000000E-09  600.000000E-09 
+     TWPCLMX  600.000000E-09  600.000000E-09 
+   TSUDCLKMN    0               0            
+   TSUDCLKTY    0               0            
+   TSUDCLKMX    0               0            
+ TSUPCCLKHMN    0               0            
+ TSUPCCLKHTY    0               0            
+ TSUPCCLKHMX    0               0            
+    THDCLKMN    0               0            
+    THDCLKTY    0               0            
+    THDCLKMX    0               0            
+  TSUCECLKMN    0               0            
+  TSUCECLKTY    0               0            
+  TSUCECLKMX    0               0            
+   THCECLKMN    0               0            
+   THCECLKTY    0               0            
+   THCECLKMX    0               0            
+
+
+**** 07/16/24 21:22:54 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-bias"  [ c:\elab-b\lab3\counter-pspicefiles\schematic1\bias.sim ] 
+
+
+ ****     Digital IO  MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               IO_STM          IO_4000A        IO_STD          
+        DRVL    0               1.649000E+03  104            
+        DRVH    0               1.649000E+03   96.4          
+       AtoD1                 AtoD_4000A      AtoD_STD        
+       AtoD2                 AtoD_4000A_NX   AtoD_STD_NX     
+       AtoD3                 AtoD_4000A      AtoD_STD        
+       AtoD4                 AtoD_4000A_NX   AtoD_STD_NX     
+       DtoA1 DtoA_STM        DtoA_4000A      DtoA_STD        
+       DtoA2 DtoA_STM        DtoA_4000A      DtoA_STD        
+       DtoA3 DtoA_STM        DtoA_4000A      DtoA_STD        
+       DtoA4 DtoA_STM        DtoA_4000A      DtoA_STD        
+    DIGPOWER                 CD4000_PWR                      
+      TSWHL1                    7.070000E-09    1.511000E-09 
+      TSWHL2                    6.940000E-09    1.487000E-09 
+      TSWHL3                    9.330000E-09    1.511000E-09 
+      TSWHL4                    9.180000E-09    1.487000E-09 
+      TSWLH1                    8.580000E-09    3.517000E-09 
+      TSWLH2                    8.370000E-09    3.564000E-09 
+      TSWLH3                   10.730000E-09    3.517000E-09 
+      TSWLH4                   10.590000E-09    3.564000E-09 
+       TPWRT  100.000000E+03  100.000000E+03  100.000000E+03 
+
+
+**** 07/16/24 21:22:54 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-bias"  [ c:\elab-b\lab3\counter-pspicefiles\schematic1\bias.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N14823)     .0194 (N14830)     .0290 (N14834)     .0342 (N14838)     .0369     
+
+(N14842)     .0380 (N14890)     .0380 (N14897)     .0393 (N14920)     .0400     
+
+(N14927)     .0402 (N14980)     .0419 (N15094)    5.0000 (N15179)     .0412     
+
+(N15218)    4.3163 (N16267)    3.5000 (N17095)    5.0000 ($G_DGND)    0.0000    
+
+($G_DPWR)    5.0000                   (X_U2A.6)     .0479                       
+
+(X_U2A.7)    -.4599                   (X_U2A.8)    -.4599                       
+
+(X_U2A.9)    0.0000                   (X_U2A.a)     .0100                       
+
+(X_U2A.b)     .0100                   (X_U2B.6)   -1.5245                       
+
+(X_U2B.7)    6.3468                   (X_U2B.8)    6.3468                       
+
+(X_U2B.9)    0.0000                   (X_U2B.a)    4.9594                       
+
+(X_U2B.b)    -.0406                   (X_U2A.10)     .6477                      
+
+(X_U2A.11)     .0386                  (X_U2A.12)     .0417                      
+
+(X_U2A.13)     .6342                  (X_U2A.14)     .6331                      
+
+(X_U2A.53)    3.5000                  (X_U2A.54)     .8220                      
+
+(X_U2A.90)  -10.0360                  (X_U2A.91)   40.0000                      
+
+(X_U2A.92)  -40.0000                  (X_U2A.99)    2.5000                      
+
+(X_U2B.10)     .6820                  (X_U2B.11)     .0803                      
+
+(X_U2B.12) 22.19E-09                  (X_U2B.13)     .6540                      
+
+(X_U2B.14)     .6820                  (X_U2B.53)    3.5000                      
+
+(X_U2B.54)     .8220                  (X_U2B.90)   40.6100                      
+
+(X_U2B.91)   40.0000                  (X_U2B.92)  -40.0000                      
+
+(X_U2B.99)    2.5000                  ($G_CD4000_VDD)    5.0000                 
+
+($G_CD4000_VSS)    0.0000             (X$N15218_AtoD1.1)    1.5648              
+
+(X$N15218_AtoD1.2)     .7824          (X$N15218_AtoD1.3)    2.2862              
+
+(X$N14890_DtoA1.DRVGND)     .0379     (X$N14890_DtoA1.DRVPWR)    4.9488         
+
+(X$N14897_DtoA1.DRVGND)     .0392     (X$N14897_DtoA1.DRVPWR)    4.9489         
+
+(X$N14920_DtoA1.DRVGND)     .0399     (X$N14920_DtoA1.DRVPWR)    4.9489         
+
+(X$N14927_DtoA1.DRVGND)     .0402     (X$N14927_DtoA1.DRVPWR)    4.9489         
+
+(X$N14890_DtoA1.X1.DRVN)     .0015    (X$N14890_DtoA1.X1.DRVP)     .0012        
+
+(X$N14897_DtoA1.X1.DRVN)     .0015    (X$N14897_DtoA1.X1.DRVP)     .0012        
+
+(X$N14920_DtoA1.X1.DRVN)     .0015    (X$N14920_DtoA1.X1.DRVP)     .0012        
+
+(X$N14927_DtoA1.X1.DRVN)     .0015    (X$N14927_DtoA1.X1.DRVP)     .0012    
+
+
+
+ DGTL NODE : STATE  DGTL NODE : STATE  DGTL NODE : STATE  DGTL NODE : STATE
+
+
+(X_U7.Q2I) : 0     (M_UN0003) : 0     (N14890$DtoA) : 0  (X_U7.Q4I) : 0         
+
+(X_U7.Q3I) : 0     (  N15888) : 0     (  N16199) : 1     (N14927$DtoA) : 0      
+
+(   $D_HI) : 1     ( X_U7.T7) : 0     (X_U7.Q5I) : 0     (M_UN0001) : 0         
+
+(X_U7.Q6I) : 0     (   START) : 0     (N14897$DtoA) : 0  ( X_U7.T4) : 0         
+
+(   CLOCK) : 0     (   $D_NC) : Z     (X_U7.Q7I) : 0     (X_U7.CLRB) : 1        
+
+(M_UN0002) : 0     (N14920$DtoA) : 0  ( X_U7.T5) : 0     (X_U7.Q1I) : 0         
+
+( X_U7.T6) : 0     (N15218$AtoD) : 1  ( X_U7.T3) : 0     
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1        -5.661E-04
+    V_V2        -3.518E-12
+    V_V3        -5.865E-04
+    X_U2A.vb     4.791E-07
+    X_U2A.vc     3.459E-12
+    X_U2A.ve    -1.004E-02
+    X_U2A.vlim  -1.004E-02
+    X_U2A.vlp   -5.004E-11
+    X_U2A.vln   -2.997E-11
+    X_U2B.vb    -1.524E-05
+    X_U2B.vc    -4.059E-02
+    X_U2B.ve     3.383E-12
+    X_U2B.vlim   4.061E-02
+    X_U2B.vlp    1.414E-05
+    X_U2B.vln   -8.061E-11
+    X$DIGIFPWR.VDPWR  -6.835E-04
+    X$DIGIFPWR.VDGND   1.535E-05
+    X$CD4000_PWR.VVDD  -2.505E-04
+    X$CD4000_PWR.VVSS  -1.463E-05
+
+    TOTAL POWER DISSIPATION   7.90E-02  WATTS
+
+
+
+          JOB CONCLUDED
+
+**** 07/16/24 21:22:54 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-bias"  [ c:\elab-b\lab3\counter-pspicefiles\schematic1\bias.sim ] 
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  Total job time (using Solver 1)   =         .59
+
